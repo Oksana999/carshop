@@ -1,95 +1,74 @@
 <!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title> Car store </title>
-    <style type="text/css">
-        div {
-            position: relative;
-        }
-        body {
-            position: relative; /* Фиксированное положение */
-            left: 0; top: 5px; /* Левый верхний угол */
-            padding: 10px; /* Поля вокруг текста */
-            /*background-image: url(https://png.pngitem.com/pimgs/s/20-201159_sports-car-png-images-sports-cars-clip-art.png;);*/
-            background-image: url("img/bg3.jpg");
-            width: 70%; /* Ширина слоя */
-            height: 80%;
-            background-size: cover;
-            color: white;
-
-            text-align: center;
-        }
-
-        .cars {
-            float: left; /*Задаем обтекание*/
-            line-height: 30px;/*Высота строки +  верт. центрирования текста*/
-            font-size: 18px;
-            background: #e5e8d5;
-            color: #5807ed;
-            margin-top: 5px;
-            width: 280px; /*Фиксируем ширину блока*/
-            margin-right: 5px;
-            text-align: center; /*Центрируем текст по горизонтали*/
-        }
-        .send-number {
-            background-color: #6D84F8;
-            margin-top: 810px;
-            width: 170px;
-            height: 35px;
-            border-radius: .25rem;
-            padding: 5px 5px 5px 5px;
-            color: white;
-            cursor: pointer;
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <title> Car store </title>
+  <link href="../static/css/carsstore.css" th:href="@{/css/carsstore.css}" rel="stylesheet" />
 </head>
 <body>
+<div class="container">
+  <header class="header">
+    <h1 class="header__title">Welcome to the car store! </h1>
+  </header>
+  <!--    <span th:text="${currentUser.getName()}"></span>-->
+  <!--    <span style="color: blueviolet" th:text="${'Welcome to car store' + ${user.getName()} }"></span>-->
+  <!--    <p th:text="${currentUser.getName()}">Nothing</p>-->
+  <main class="main">
+    <ul class="car-list">
+      <li class="car-list__item" th:each="car : ${cars}">
+        <!--                    <span th:text="${car.getCarId()}">carId</span>-->
 
-    <h1>Welcome to the car store! </h1>
-<!--    <span th:text="${currentUser.getName()}"></span>-->
-<!--    <span style="color: blueviolet" th:text="${'Welcome to car store' + ${user.getName()} }"></span>-->
-<!--    <p th:text="${currentUser.getName()}">Nothing</p>-->
+        <div class="car-list-item__car-mark" th:text="${car.getModell()}">modell</div>
+        <form class="car-list-item__form" action="/mycar/{carId}" method="post">
+          <input type="hidden" id="carId" name="carId" th:value="${car.getCarId()}">
+          <button class="car-list__button" type="submit">
+            <img class="car-list__img" th:src="${car.getImageName()}" alt="th:text='${car.getMark()}'">
+          </button>
+          <div class="car-list-item__info">
+            <div th:text="'Model: ' + ${car.getMark()}">mark</div>
+            <div th:text="'Year: ' + ${car.getBuildYear()}">buildYear</div>
+            <div th:text="'Price: $' + ${car.getPrice()}">price</div>
+          </div>
+        </form>
 
-        <tr th:each="car : ${cars}">
-            <div class="cars">
+      </li>
+    </ul>
+    <!--        <tr th:each="car : ${cars}">-->
+    <!--            <div class="cars">-->
 
-            <td><span th:text="${car.getCarId()}">carId </span></td>
-            <td><span th:text="${car.getMark()}">mark </span></td>
-            <td><span th:text="${car.getModell()}">modell </span></td>
-            <td><span th:text="${car.getBuildYear()}">buildYear </span></td>
-                <td><span th:text="${car.getPrice()}">price </span></td>
+    <!--            <td><span th:text="${car.getCarId()}">carId </span></td>-->
+    <!--            <td><span th:text="${car.getMark()}">mark </span></td>-->
+    <!--            <td><span th:text="${car.getModell()}">modell </span></td>-->
+    <!--            <td><span th:text="${car.getBuildYear()}">buildYear </span></td>-->
+    <!--                <td><span th:text="${car.getPrice()}">price </span></td>-->
 
-            <form action="/mycar/{carId}" method="post">
-                <input type="hidden" id="carId" name="carId" th:value="${car.getCarId()}">
-             <td><button type="submit">
-                 <img th:src="${car.getImageName()}" alt="Example" th:width="120" height="80">
-             </button>
-             </td>
-            </form>
+    <!--            <form action="/mycar/{carId}" method="post">-->
+    <!--                <input type="hidden" id="carId" name="carId" th:value="${car.getCarId()}">-->
+    <!--             <td><button type="submit">-->
+    <!--                 <img th:src="${car.getImageName()}" alt="Example" th:width="120" height="80">-->
+    <!--             </button>-->
+    <!--             </td>-->
+    <!--            </form>-->
+    <!--</div>-->
+    <!--        </tr>-->
+  </main>
 
-
-</div>
-        </tr>
-
-    <br><br><br><br><br><br>
-    <div class="send-number">
-<form action="/carmodels">
-    <input type="button" value="Select cars by models" onClick='location.href="/carmodels"'>
-</form>
+  <!--    <br><br><br><br><br><br>-->
+  <div class="select-model">
+    <form action="/carmodels">
+      <input type="button" value="Select cars by models" onClick='location.href="/carmodels"'>
+    </form>
 
     <br><br>
-<!--    </tr>-->
-<!--<a href="/carmodels"><input type="button" value="Select cars by modell" name= button onClick="Selection"/></a><br>-->
+    <!--    </tr>-->
+    <!--<a href="/carmodels"><input type="button" value="Select cars by modell" name= button onClick="Selection"/></a><br>-->
 
     <form action="/home">
-    <input type="button" value="Home" onClick='location.href="/home"'>
+      <input type="button" value="Home" onClick='location.href="/home"'>
     </form><br>
-    </div>
-
+  </div>
+</div>
 </body>
 </html>

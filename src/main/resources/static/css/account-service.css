@@ -1,4 +1,4 @@
-@import '../../templates/node_modules/normalize.css/normalize.css'; 
+@import '../../../../node_modules/normalize.css/normalize.css';
 *,
 *::before,
 *::after {
@@ -87,6 +87,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.account-info__container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 /* #sidebar, #content { position: absolute; }
 #sidebar, #content { overflow: auto; padding: 20px; }

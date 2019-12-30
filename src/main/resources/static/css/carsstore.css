@@ -1,0 +1,89 @@
+@import '../../../../node_modules/normalize.css/normalize.css';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*.header {*/
+/*  */
+/*}*/
+.header__title {
+  text-align: center;
+}
+.car-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.car-list__item {
+  border: 2px solid red;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+}
+.car-list-item__car-mark {
+  text-align: center;
+}
+.car-list-item__form {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+}
+.car-list-item__info {
+  margin: 5px;
+}
+.car-list__button {
+  width: 150px;
+  height: 100px;
+  align-self: center;
+}
+.car-list__img {
+  width: 100%;
+}
+
+/*div {*/
+/*  position: relative;*/
+/*}*/
+/*body {*/
+/*  position: relative; !* Фиксированное положение *!*/
+/*  left: 0; top: 5px; !* Левый верхний угол *!*/
+/*  padding: 10px; !* Поля вокруг текста *!*/
+/*  !*background-image: url(https://png.pngitem.com/pimgs/s/20-201159_sports-car-png-images-sports-cars-clip-art.png;);*!*/
+/*  background-image: url("img/bg3.jpg");*/
+/*  width: 70%; !* Ширина слоя *!*/
+/*  height: 80%;*/
+/*  background-size: cover;*/
+/*  color: white;*/
+
+/*  text-align: center;*/
+/*}*/
+
+/*.cars {*/
+/*  float: left; !*Задаем обтекание*!*/
+/*  line-height: 30px;!*Высота строки +  верт. центрирования текста*!*/
+/*  font-size: 18px;*/
+/*  background: #e5e8d5;*/
+/*  color: #5807ed;*/
+/*  margin-top: 5px;*/
+/*  width: 280px; !*Фиксируем ширину блока*!*/
+/*  margin-right: 5px;*/
+/*  text-align: center; !*Центрируем текст по горизонтали*!*/
+/*}*/
+/*.select-model {*/
+/*  background-color: #6D84F8;*/
+/*  margin-top: 810px;*/
+/*  width: 170px;*/
+/*  height: 35px;*/
+/*  border-radius: .25rem;*/
+/*  padding: 5px 5px 5px 5px;*/
+/*  color: white;*/
+/*  cursor: pointer;*/
+/*}*/

@@ -20,11 +20,11 @@
         </header>
         <main class="main">
             <div class="main__account-actions">
-                <div class="accout-info__container">
+                <div class="account-info__container">
                     <form class="account-actions__form" method="post" action ="/addMoneyToAccount/{accountId}">
                         <input name="accountId" type="hidden" th:value="${account.getAccountId()}" >
                         <label class="account-action__label"> Add Money to Your Account:<br>
-                           <input style="margin-left: 10px" name="amount" type="number"  width="15" th:value="${account.getAmount()}">
+                           <input name="amount" type="number"  th:value="${account.getAmount()}">
                         </label>
                         <button class="account-action__submit-button" type="submit">Submit</button>
                      </form>
