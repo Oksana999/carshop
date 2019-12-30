@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fmt="" xmlns:c="">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/carlist.css">
+    <link rel="stylesheet" type="text/css" href="css/car.css">
+    <title>Models</title>
+</head>
+<body>
+
+<form id="addrole" action="/addrole" method="post">
+    <label>
+        <select name="user">
+            <option value="сhoice of models">Choice of users</option>
+            <option th:each="user : ${users}" th:value="${user.getUserId()}" th:text="${user.getUsername()}">
+            </option>
+        </select><br><br><br>
+        <div>
+            <input type="radio" name="role" value="ADMIN">ADMIN</input>
+            <input type="radio" name="role" value="USER">USER</input>
+
+        </div>
+    </label>
+
+    <input type="submit" value="Search"/>
+</form>
+
+<form>
+    <input type="button" value="Admin" onClick='location.href="/admin"'>
+</form>
+<br>
+<form>
+    <input type="button" value="Home" onClick='location.href="/home"'>
+</form>

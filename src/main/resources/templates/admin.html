@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage cars </title>
+</head>
+<body>
+
+<h1>Add role to the user</h1>
+<br>
+<form action="/addrole" method="post">
+<form action="/addrole">
+    <input type="button" value="Add role to user" onClick='location.href="/addrole"'>
+</form><br>
+
+<h1>Add new car</h1>
+<br>
+<form action="/newcar" method="post">
+    <label>
+    Id: <input type="hidden" name="carId" value="" size="25" placeholder="id">
+    </label><br>
+    <label>
+    Model: <input type="text" name="modell" value="" size="25"placeholder="model">
+    </label><br>
+    <label>
+    Mark: <input type="text" name="mark" value="" size="25" placeholder="mark">
+    </label><br>
+    <label>
+    Build: <input type="number" name="buildYear" value="" size="25" placeholder="year of build">
+</label><br>
+    <label>
+        Build: <input type="number" name="price" value="" size="25" placeholder="price">
+    </label><br>
+    <label>
+    Img: <input type="text" name="imageName" value="" size="50">
+    </label><br>
+    <button type="submit">Submit</button>
+</form>
+
+<h1>Update car's information</h1>
+<br>
+<form action="/update" method="post">
+    <label>
+        Id: <input type="number" name="carId" value="" size="25" placeholder="id">
+    </label><br>
+    <label>
+        Model: <input type="text" name="modell" value="" size="25"placeholder="model">
+    </label><br>
+    <label>
+        Mark: <input type="text" name="mark" value="" size="25" placeholder="mark">
+    </label><br>
+    <label>
+        Build: <input type="number" name="buildYear" value="" size="25" placeholder="year of build">
+    </label><br>
+    <label>
+        Deleted: <input type="text" name="deleted" value="" size="25" placeholder="deleted">
+    </label><br>
+    <label>
+        Sold: <input type="text" name="sold" value="" size="25" placeholder="sold">
+    </label><br>
+    <label>
+        Img: <input type="text" name="imageName" value="" size="50">
+    </label><br>
+    <button type="submit">Submit</button>
+</form>
+
+    <h1> Delete car</h1>
+<form action="/deletecar" method="post">
+    <label>
+        Id: <input type="number" name="carId" value="" size="25" placeholder="id">
+    </label>
+    </label><br>
+    <button type="submit">Submit</button>
+</form>
+<form>
+    <input type="button" value="Home" onClick='location.href="/home"'>
+</form>
+<br>
+
+<form>
+    <input type="button" value="Cars store" onClick='location.href="/cars"'>
+</form>
+
+</body>
+</html>

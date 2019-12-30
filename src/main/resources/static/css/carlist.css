@@ -1,0 +1,32 @@
+.table {
+	display: flex;
+	flex-direction: column;
+	background: #B4A3A2;
+	 color: #FFFFFF;
+	font-weight:bold;
+}
+  
+.row {
+	display: flex;
+	flex-direction: row;
+	
+	
+}
+
+.cell {
+	width: 200px;
+	margin: 5px 10px;
+}
+	
+.cell img {
+	max-height: 100px;
+	max-width: 100px;
+}
+.tablehead {
+	font-size: 1.2em;
+	font-weight: bold;	
+	
+}	
+#car-brand-form {
+	margin-left: 10%;
+}

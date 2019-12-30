@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:fmt="" xmlns:c="">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car by model</title>
+
+</head>
+<body>
+
+<!--     <p  th:text="${modell} ></p>-->
+<!--<div class="table">-->
+<!--    <div class="row">-->
+<!--        <div class="cell">Model</div>-->
+<!--        <div class="cell">Photo</div>-->
+<!--        <div class="cell">Discount</div>-->
+<!--        <div class="cell">Price</div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div>-->
+<!--<c:forEach var="car" items="${filteredCars}">-->
+
+
+    <tr th:each="car : ${filteredCars}">
+        <div>
+           <label for="mark">Mark:</label>
+            <td><span id="mark"  style="color:blue" th:text="${car.getMark()}">Mark </span></td><br>
+            <label for="model">Model:</label>
+            <td><span id="model" style="color:blue" th:text="${car.getModell()}">Model </span></td><br>
+            <label for="buildYear">Build year:</label>
+            <td><span id="buildYear" style="color:blue" th:text="${car.getBuildYear()}">BuildYear </span></td><br>
+            <label for="price">Price: $</label>
+            <td><span id="price" style="color:blue"th:text="${car.getPrice()}">Price </span></td><br>
+<!--        <div class="form-img1">-->
+<!--             <td>-->
+                 <form action="/mycar/{carId}" method="post">
+                     <input type="hidden" id="carId" name="carId" th:value="${car.getCarId()}">
+                     <td><button type="submit">
+                         <img th:src="${car.getImageName()}" alt="Example" th:width="180" height="100">
+                         </button>
+                     </td>
+                 </form>
+        </div>
+
+      </tr><br><br>
+
+<br>
+<form>
+    <input type="button" value="Car's store" onClick='location.href="/cars"'>
+</form><br>
+<form>
+    <input type="button" value="Home" onClick='location.href="/home"'>
+</form>
+
+
+
+
+
+</body>
+</html>

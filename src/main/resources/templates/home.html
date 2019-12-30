@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/1999/XSL/Transform"
+      xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<!--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        body { margin: 0; }
+
+        #header {
+            position: fixed; /* Фиксированное положение */
+            left: 0; top: 0; /* Левый верхний угол */
+            padding: 30px; /* Поля вокруг текста */
+            background: blueviolet; /* Цвет фона */
+            color: white; /* Цвет текста */
+            width: 100%; /* Ширина слоя */
+            text-align: left;
+
+        }
+
+        #header .right {
+            float: right;
+        }
+
+        body {
+            position: fixed; /* Фиксированное положение */
+            left: 0; top: 50px; /* Левый верхний угол */
+            padding: 30px; /* Поля вокруг текста */
+            /*background-image: url("http://www.hdfondos.eu/preview/get_photo/553640/1920/1200")  ;*/
+            background-image: url("img/bg1.jpg")  ;
+            width: 70%; /* Ширина слоя */
+            height: 80%;
+            background-size: cover;
+            color: white;
+
+            text-align: center;
+        }
+
+        img {
+            width: 900px;
+            height: 650px;
+        }
+    </style>
+    <title>Home</title>
+
+</head>
+<body>
+  <div id="header">
+     <input type="button" value="Car store" onClick='location.href="/cars"'>
+                <input type="button" value="Logout" onClick='location.href="/logout"'>
+
+         <div class="right">
+        <c:choose>
+            <c:when test="${sessionScope.currentUser != null}">
+
+                    <input type="button" value="Admin" onClick='location.href="/admin"'>
+
+
+            </c:when>
+        </c:choose><br>
+
+<!--&lt;!&ndash;        <div th:object="${session.user}">&ndash;&gt;-->
+<!--       <c:choose>-->
+<!--        <c:when test="${sessionScope.currentUser != null}">-->
+
+<!--            <form action="/mycar/{carId}" method="post">-->
+<!--                <input type="hidden" id="carId" name="carId" th:value="${car.getCarId()}">-->
+<!--                <td><button type="submit">-->
+<!--                    <img th:src="${car.getImageName()}" alt="Example" th:width="180" height="100">-->
+<!--                </button>-->
+<!--                </td>-->
+<!--            </form>-->
+
+            <form method="post" action ="/createAccount/{userId}">
+
+            <input name="userId" type="hidden" id="userId"  th:value="${session.currentUser.getUserId()}">
+<!--            <input name="userId" type="hidden" th:value="${session.currentUser.getUserId()}" >-->
+<!--            <input name="userId" type="hidden" th:value="${currentUser.getUserId()}" >-->
+<!--            <input type="submit" value=" Your Account " />-->
+                <button type="submit">Your account</button>
+
+             </form>
+        </div>
+<!--        </c:when>-->
+<!--        </c:choose>-->
+
+         </div>
+  </div>
+
+<!--&lt;!&ndash;    <form action="/account/{accountId}" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="hidden"  name="accountId" th:value="${session.currentUser.getAccount().getAccountId()}">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="submit" value="Your account service">&ndash;&gt;-->
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
+
+<!--            </div>-->
+<!--  </div>-->
+
+
+        <div class="content">
+            <h1>Welcome to Our Car Shop</h1>
+
+        </div>
+
+</body>
+</html>

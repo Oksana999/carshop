@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fmt="" xmlns:c="">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/carlist.css">
+    <link rel="stylesheet" type="text/css" href="css/car.css">
+    <title>Models</title>
+</head>
+<body>
+<form id="carmodelform" action="/carmodels/{modell}" method="post">
+    <label>
+        <select name="modell">
+            <option value="сhoice of models">Choice of models</option>
+           <option th:each="modell : ${models}" th:value="${modell}" th:text="${modell}">
+            </option>
+        </select>
+    </label>
+    <input type="submit" value="Search"/>
+</form>
+<br><br>
+
+<tr th:each="car : ${filteredCars}">
+    <td><span th:text="${car.getCarId()}">Id </span></td>
+    <td><span th:text="${car.getMark()}">Mark </span></td>
+    <td><span th:text="${car.getModell()}">Model </span></td>
+    <td><span th:text="${car.getBuildYear()}">BuildYear </span></td>
+    <td><img th:src="${car.getImageName()}" th:width="250" height="100">
+    </td>
+</tr>
+
+<form>
+    <input type="button" value="Home" onClick='location.href="/home"'>
+</form>
+
+
+</body>
+</html>

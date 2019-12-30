@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deleted car</title>
+</head>
+<body>
+
+<h2><span th:text="${car.getModell()}"></span>  <span th:text="${car.getMark()}"></span><br>
+    <img th:src="${car.getImageName()}" th:width="150" height="100"><br> was successfully deleted </h2>
+
+<form>
+    <input type="button" value="Admin" onClick='location.href="/admin"'>
+</form><br>
+<form>
+    <input type="button" value="Home" onClick='location.href="/home"'>
+</form>
+</body>
+</html>

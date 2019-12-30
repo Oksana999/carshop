@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My car</title>
+</head>
+<body>
+<div style="float: inherit">
+<!--<span  th:text="${car.getCarId()}">Id </span><br>-->
+<img th:src="${car.getImageName()}" th:width="350" height="200"><br>
+<span  th:text="${car.getModell()}">Model </span>
+<span th:text="${car.getMark()}">Mark </span><br>
+<span th:text="${car.getBuildYear()}">Build Year </span></br>
+</div>
+<br><br>
+    <form method="post" action ="/buycar/{carId}">
+        <input name="userId" type="hidden" th:value="${session.currentUser.getUserId()}">
+        <input name="carId" type="hidden" th:value="${car.getCarId()}" >
+<!--        <input name="amount" type="hidden" th:value="${car.getPrice()}">-->
+        <button type="submit">Buy</button>
+    </form>
+
+<!--<form>-->
+<!--    <input type="button" value="Buy" onClick='location.href="/buycar"'>-->
+<!--</form>-->
+
+
+<form>
+    <input type="button" value="Home" onClick='location.href="/home"'>
+</form><br>
+<form>
+    <input type="button" value="Cars store" onClick='location.href="/cars"'>
+</form>
+
+</body>
+</html>

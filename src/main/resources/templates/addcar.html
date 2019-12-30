@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new car</title>
+    <style>
+        .fig {
+            text-align: center; /* Выравнивание по центру */
+        }
+    </style>
+</head>
+<body>
+    <p th:class="fig">
+    <h2>New car successfully created !</h2>
+    <img th:src="${newcar.getImageName()}" th:width="250" height="160"><br>
+    <span th:text="${newcar.getModell()}"></span>
+    <span th:text="${newcar.getMark()}"></span>
+    </p>
+
+    <br>
+    <form>
+        <input type="button" value="Home" onClick='location.href="/home"'>
+    </form>
+    <br>
+    <form>
+        <input type="button" value="Car's store" onClick='location.href="/cars"'>
+    </form>
+<!--    <a th:href="@${/home}">To home</a>-->
+<!--    <a href="/home">Home</a>-->
+</body>
+</html>

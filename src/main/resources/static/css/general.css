@@ -1,0 +1,66 @@
+body{
+	font: 1.2em "Verdana", sans-serif;
+	letter-spacing: 0.10em;
+
+	background-color:#D6A580;
+}
+a	{
+	  color:#dc3545;
+	  text-decoration: none;
+	  background: #FFFFFF;
+	        font-weight:bold;
+}
+
+a:visited {
+			color:#dc3545;
+}
+.logo {
+	font-size: 1.5em;
+	font-weight: lighter;
+	color:#dc3545;
+	margin-bottom: 10px;
+}
+.menu {
+	z-index:10;
+}
+.menu a {
+	   font-weight:bold;
+	   z-index:10;
+	   padding: 6px;
+}
+.menu a:hover {
+	z-index: 10;
+	border: 1px solid #dc3545;
+} 
+
+.header .menu {
+		display:flex;
+		flex-direction:row;
+		align-items: flex-start;
+		align-content: flex-start;
+}
+.header .menu .left{
+	display: flex;
+	
+} 
+
+.header .menu .right{
+	display: flex;
+	margin-left: auto;
+}
+
+.header .menu .menu-item {
+	margin: 5px 15px 5px 15px;
+}
+.center {
+	display: flex;
+	justify-content: center;
+}
+.row {
+	 
+	display: flex;
+	flex-direction: row;	
+}
+.cell {
+	color: black;
+}

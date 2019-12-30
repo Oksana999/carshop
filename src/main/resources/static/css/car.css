@@ -1,0 +1,23 @@
+body{
+	background-color:#F1BDAC;
+}	
+
+.small{	font: 0.8em "Verdana", sans-serif;
+	letter-spacing: 0.15em;
+
+}
+
+.cell img {
+	max-height: 350px;
+	max-width: 450px;
+}
+
+.cell {
+	color: white;
+}
+	
+.h1 {
+    font-size: 28px;
+    font-family: Monaco, Courier, monospace;
+    color: #618ad2;
+}

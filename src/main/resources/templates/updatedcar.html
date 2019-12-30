@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Updated car</title>
+
+    <h2>Car was successfully updated !</h2>
+    <img th:src="${car.getImageName()}" th:width="250" height="180"><br>
+    <span th:text="${car.getModell()}"></span>
+    <span th:text="${car.getMark()}"></span>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" charset="utf-8" src="script.js"></script>
+</head>
+<body onload="main()">
+Привет.
+
+<div id="cars"></div>
+<hr>
+<div id="carAddForm">
+    <label for="carModelForm">model:</label> <br>
+    <input id="carModelForm" type="text" name="model" placeholder="input car model">
+    <br>
+    <label for="carMarkForm">mark:</label> <br>
+    <input id="carMarkForm" type="text" name="mark" placeholder="input car mark">
+    <br>
+    <label for="carBuildYear">carBuildYear:</label> <br>
+    <input id="carBuildYear" type="text" name="BuildYear" placeholder="input car build Year">
+    <br>
+    <label for="carPrice">carPrice:</label> <br>
+    <input id="carPrice" type="text" name="carPrice" placeholder="input car Price">
+    <br>
+    <label for="imageName">imageName:</label> <br>
+    <input id="imageName" type="text" name="imageName" placeholder="input image Name">
+    <br>
+    <button onclick="formAddCarOnClick()">Add car</button>
+</div>
+
+<a name ="anchor">Anchor</a>
+
+<div id="saveCar">
+    <input type="hidden" id="carIdChange">
+    <label for="carModelForm">model:</label> <br>
+    <input id="carModelFormNew" type="text" name="modelNew" placeholder="input car model">
+    <br>
+    <label for="carMarkForm">mark:</label> <br>
+    <input id="carMarkFormNew" type="text" name="markNew" placeholder="input car mark">
+    <br>
+    <label for="carBuildYear">carBuildYear:</label> <br>
+    <input id="carBuildYearNew" type="text" name="BuildYearNew" placeholder="input car build Year">
+    <br>
+    <label for="carPrice">carPrice:</label> <br>
+    <input id="carPriceNew" type="text" name="carPriceNew" placeholder="input car Price">
+    <br>
+    <label for="imageName">imageName:</label> <br>
+    <input id="imageNameNew" type="text" name="imageNameNew" placeholder="input image Name">
+    <br>
+    <button onclick="saveCarButton()">Save</button>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Your account</title>
+
+    <link href="../static/css/account-service.css" th:href="@{/css/account-service.css}" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="header__title-wrapper">
+            <h1 class="header__title"><p class="header__greeting">Hello, <span  th:text="${session.currentUser.getUsername()}">
+            </span> ! Welcome to Your Account Service!</p></h1>
+        </div>
+          <button class="header__home-button" type="button" onClick='location.href="/home"'>Home</button>
+        </header>
+        <main class="main">
+            <div class="main__account-actions">
+                <div class="accout-info__container">
+                    <form class="account-actions__form" method="post" action ="/addMoneyToAccount/{accountId}">
+                        <input name="accountId" type="hidden" th:value="${account.getAccountId()}" >
+                        <label class="account-action__label"> Add Money to Your Account:<br>
+                           <input style="margin-left: 10px" name="amount" type="number"  width="15" th:value="${account.getAmount()}">
+                        </label>
+                        <button class="account-action__submit-button" type="submit">Submit</button>
+                     </form>
+                </div>
+            </div>
+            <div class="main__account-info">
+                <div class="account-info__container">
+                <h2><p>Account Balance: $ <span th:text="${account.getAmount()}"></span></p></h2>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+
+    <!-- <header class="header h1" style="border-style: solid; border-color: #a89687;  background-color: #732eb0; color: white; padding-left: 20px; position: fixed;
+         width: 100%; left: 0; top: 0  ">
+
+    <h1 class="header__title">
+        <p  style="color: #e5eada; position: center; margin-left:8em"><span  th:text="${session.currentUser.getUsername()}">
+
+        </span>, welcome to your account service!</p></h1>
+
+        <input type="button"  style="color: blue; text-decoration-color: white; z-index: 1; margin-left: 1150px; margin-bottom: 10px"
+               value="Home" onClick='location.href="/home"'>
+    </header>
+
+    <div class="#sidebar" style=" background-color: #59a3f7; position: fixed;
+         width: 45%; height: 700px; left: 0; top: 135px; margin-bottom: 400px">
+        <br><br><br><br><br><br><br>
+
+         <form method="post" action ="/addMoneyToAccount/{accountId}">
+             <input name="accountId" type="hidden" th:value="${account.getAccountId()}" >
+             <label style="margin-left: 10px"> Add money to your account:<br>
+                <input style="margin-left: 10px" name="amount" type="number"  width="15" th:value="${account.getAmount()}">
+             </label>
+             <button type="submit">Submit</button>
+          </form><br><br><br><br><br><br><br><br><br>
+
+ </div>
+
+    <div class="#content" style="margin-left: 800px; margin-top: 235px; width: 55%;  margin-bottom: 400px">
+         <h2><p style="position: center">On your account: $ <span th:text="${account.getAmount()}"></span></p></h2>
+
+    </div> -->
+</body>
+</html>

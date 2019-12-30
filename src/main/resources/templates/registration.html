@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="java">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/static/css/myForm.css"/>
+    <link rel="stylesheet" href="/static/css/app.css"/>
+<!--    <style type="text/css">-->
+<!--        body{-->
+<!--            background-color: #6D84F8;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+
+<div class="myForm">
+    <h1>Registration form</h1>
+    <form  method = "post" action ="/checkRegistration">
+
+         Name: <label>
+        <input type="text" name="name" value="" size="25" placeholder="name"/>
+    </label>
+        <br>
+
+        Email: <label>
+        <input type="text" name="email" value="" size="25" placeholder="e-mail"/>
+    </label>
+        <br>
+        Password: <label>
+        <input type="text" name="password" value="" size="25" placeholder="password"/>
+    </label>
+        <input type="submit"/>
+    </form>
+</div>
+<form>
+    <input type="button" value="Home" onClick='location.href="/home"'>
+</form>
+
+</body>
+</html>
