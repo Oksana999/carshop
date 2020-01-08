@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="/static/css/myForm.css"/>
-    <link rel="stylesheet" href="css/app.css"/>
+    <link href="../static/css/myForm.css" th:href="@{/css/myForm.css}" rel="stylesheet" />
+<!--    <link rel="stylesheet" href="/static/css/myForm.css"/>-->
+<!--    <link rel="stylesheet" href="css/app.css"/>-->
 
     <style type="text/css">
         body{
@@ -13,25 +15,34 @@
     </style>
 </head>
 <body>
+<div class="container">
+    <div class="myForm">
+        <header class="header">
+            <h1 class="header_title">Please login to proceed</h1>
+        </header>
+            <main class="main">
+                <div class="myForm-content">
+                    <form  method = "post" action ="/checkLogin">
+                        Email: <label>
+                        <input type="text" name="email"/>
+                    </label>
+                        <br>
+                        Password: <label>
+                        <input type="text" name="password"/>
+                    </label>
 
-<div class="myForm">
-    <h1>Please login to proceed</h1>
-    <form  method = "post" action ="/checkLogin">
-        Email: <label>
-        <input type="text" name="email"/>
-    </label>
-        <br>
-        Password: <label>
-        <input type="text" name="password"/>
-    </label>
-
-        <input type="submit"/>
-    </form>
-</div>
-<br>
-<form>
-    <input type="button" value="Home" onClick='location.href="/home"'>
-</form>
-
+                        <input type="submit"/>
+                    </form>
+                </div>
+            </main>
+        </div>
+    <br>
+    <!--<form>-->
+    <!--    <input type="button" value="Home" onClick='location.href="/home"'>-->
+    <!--</form>-->
+            <div class="bottom">
+                <button class="myForm_homeButton" type="button"  onclick='location.href="/"'>General</button>
+            </div>
+    </div>
 </body>
 </html>

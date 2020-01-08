@@ -22,26 +22,42 @@
 <!--<c:forEach var="car" items="${filteredCars}">-->
 
 
-    <tr th:each="car : ${filteredCars}">
-        <div>
-           <label for="mark">Mark:</label>
-            <td><span id="mark"  style="color:blue" th:text="${car.getMark()}">Mark </span></td><br>
-            <label for="model">Model:</label>
-            <td><span id="model" style="color:blue" th:text="${car.getModell()}">Model </span></td><br>
-            <label for="buildYear">Build year:</label>
-            <td><span id="buildYear" style="color:blue" th:text="${car.getBuildYear()}">BuildYear </span></td><br>
-            <label for="price">Price: $</label>
-            <td><span id="price" style="color:blue"th:text="${car.getPrice()}">Price </span></td><br>
-<!--        <div class="form-img1">-->
-<!--             <td>-->
-                 <form action="/mycar/{carId}" method="post">
-                     <input type="hidden" id="carId" name="carId" th:value="${car.getCarId()}">
-                     <td><button type="submit">
-                         <img th:src="${car.getImageName()}" alt="Example" th:width="180" height="100">
-                         </button>
-                     </td>
-                 </form>
-        </div>
+<!--    <tr th:each="car : ${filteredCars}">-->
+<!--        <div>-->
+<!--           <label for="mark">Mark:</label>-->
+<!--            <td><span id="mark"  style="color:blue" th:text="${car.getMark()}">Mark </span></td><br>-->
+<!--            <label for="model">Model:</label>-->
+<!--            <td><span id="model" style="color:blue" th:text="${car.getModell()}">Model </span></td><br>-->
+<!--            <label for="buildYear">Build year:</label>-->
+<!--            <td><span id="buildYear" style="color:blue" th:text="${car.getBuildYear()}">BuildYear </span></td><br>-->
+<!--            <label for="price">Price: $</label>-->
+<!--            <td><span id="price" style="color:blue"th:text="${car.getPrice()}">Price </span></td><br>-->
+<!--&lt;!&ndash;        <div class="form-img1">&ndash;&gt;-->
+<!--&lt;!&ndash;             <td>&ndash;&gt;-->
+<!--                 <form action="/mycar/{carId}" method="post">-->
+<!--                     <input type="hidden" id="carId" name="carId" th:value="${car.getCarId()}">-->
+<!--                     <td><button type="submit">-->
+<!--                         <img th:src="${car.getImageName()}" alt="Example" th:width="180" height="100">-->
+<!--                         </button>-->
+<!--                     </td>-->
+<!--                 </form>-->
+<!--        </div>-->
+
+<div class="bottom__selectedCars">
+
+  <tr th:each="car : ${filteredCars}">
+    <td><span th:text="${car.getCarId()}">Id </span></td>
+    <td><span th:text="${car.getMark()}">Mark </span></td>
+    <td><span th:text="${car.getModell()}">Model </span></td>
+    <td><span th:text="${car.getBuildYear()}">BuildYear </span></td>
+    <form action="/mycar/{carId}" method="post">
+      <input type="hidden"  name="carId" th:value="${car.getCarId()}">
+      <td><button type="submit"></button></td>
+      <td><img th:src="${car.getImageName()}" th:width="250" height="120">
+      </td>
+    </form>
+  </tr>
+</div>
 
       </tr><br><br>
 

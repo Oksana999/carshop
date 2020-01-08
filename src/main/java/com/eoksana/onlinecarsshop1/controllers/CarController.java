@@ -130,12 +130,6 @@ public class CarController {
         return "addrole";
     }
 
-    @GetMapping(value = "/cars")
-    public String getAllCars(Model model) {
-        List<Car> cars = this.carService.getAllActiveCars();
-        model.addAttribute("cars", cars);
-        return "carsstore";
-    }
     @GetMapping(value = "/mycar")
     public String mycar(HttpSession session, Model model){
         User currentUser = (User) session.getAttribute("currentUser");
@@ -194,24 +188,55 @@ public class CarController {
         return "deletedcar";
     }
 
-    @GetMapping(value = "/carmodels")
-    public String carmodels( Model model) {
+//    @GetMapping(value = "/carmodels")
+//    public String carmodels( Model model) {
+//        List<Car> cars = this.carService.getAllActiveCars();
+//        Set<String> models = new HashSet<>();
+//        for (Car car : cars) {
+//            models.add(car.getModell());
+//        }
+//        model.addAttribute("models", models);
+//        return "carsstore";
+//    }
+
+
+    @GetMapping(value = "/cars")
+    public String getStore(Model model){
+//    public String getAllCars(String modell, Model model) {
         List<Car> cars = this.carService.getAllActiveCars();
+        model.addAttribute("cars", cars);
         Set<String> models = new HashSet<>();
         for (Car car : cars) {
             models.add(car.getModell());
         }
         model.addAttribute("models", models);
-        return "models";
+        model.addAttribute("cars", cars);
+//        List<Car> filteredCarsByModel = this.carService.getAllcarsByModell(modell);
+//        model.addAttribute("filteredCars", filteredCarsByModel);
+        return "carsstore";
     }
-
-    @PostMapping(value = "/carmodels/{modell}")
+    @PostMapping(value = "/cars/{model}")
         public String carsByModel(@RequestParam String modell, Model model)  {
-        List<Car> filteredCarsByModel = this.carService.getAllcarsByModell(modell);
+        if(modell != null) {
+            List<Car> filteredCarsByModel = this.carService.getAllcarsByModell(modell);
 
-        model.addAttribute("filteredCars", filteredCarsByModel);
-
-        return "filteredcars";
+            model.addAttribute("filteredCars", filteredCarsByModel);
+        }else{
+            List<Car> cars = carService.getAllActiveCars();
+            model.addAttribute("cars", cars);
 
         }
+
+        return "carsstore";
+
+        }
+//        @GetMapping(value = "/cars")
+//    public String filteredCars(@RequestParam String modell, Model model) {
+//            List<Car> filteredCarsByModel = this.carService.getAllcarsByModell(modell);
+//
+//            model.addAttribute("filteredCars", filteredCarsByModel);
+//
+//            return "carsstore";
+//
+//        }
 }

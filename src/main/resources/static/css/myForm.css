@@ -1,13 +1,32 @@
+@import '../../../../node_modules/normalize.css/normalize.css';
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
 .myForm{
     /*font: 95% Arial, Helvetica, sans-serif;*/
     font-family: 'Roboto', sans-serif;
     /*font-size: 1em;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     max-width: 400px;
     margin: 10px auto;
     padding: 16px;
     background: #F7F7F7;
 }
-.myForm h1{
+.header {
+    text-align:center;
+}
+.header_title {
     background: #6D84F8;
     padding: 20px 0;
     font-size: 140%;
@@ -15,6 +34,12 @@
     text-align: center;
     color: #fff;
     margin: -16px -16px 16px -16px;
+}
+.main {
+    align-content: center;
+}
+.myForm-content {
+    align-content: center;
 }
 .myForm input[type="text"],
 .myForm input[type="date"],
@@ -79,4 +104,21 @@
 .myForm input[type="submit"]:hover,
 .myForm input[type="button"]:hover{
     background: #6D84F8;
+}
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.myForm_homeButton {
+
+    align-content: center;
+    cursor: pointer;
+    width: 58px;
+    height: 28px;
+    border: blue;
+    border-radius: 3px;
+    background-color: #4668F6;
+    color: white;
+    margin-right: 350px;
 }
