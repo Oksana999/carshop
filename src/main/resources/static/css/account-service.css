@@ -34,7 +34,9 @@ body {
 }
 .header__home-button {
     cursor: pointer;
-    height: 2em;
+    /*height: 2em;*/
+    width: 65px;
+    height: 32px;
     margin-right: 6px;
     color: white;
     background-color: blue;
@@ -60,76 +62,76 @@ body {
 .main__account-actions {
     width: 50%;
     flex-grow: 1;
-    background-color: aqua;
+    /*background-color: aqua;*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .account-actions__form {
-    margin: auto; 
+    margin: auto;
+    padding: 7px;
+    width: 500px;
+    height: 27px;
 }
 .account-action__label {
     padding-left: 11px;
-    width: 500px;
+    font-size: 18px;
+    width: 350px;
+    height: 25px;
 }
 .account-action__submit-button {
     cursor: pointer;
-    height: 2em;
+    /*height: 2em;*/
+    width: 60px;
+    height: 27px;
+    margin-left: 10px;
     color: white;
-    background-color: coral;
-    border-radius: 7px;
-    border-color: #FD6B68;
+    background-color: black;
+    border-radius: 5px;
+    border-color: coral;
 }
+.account-action__submit-button:active,
+.account-action__submit-button:hover,
+.account-action__submit-button:focus {
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    border-color: coral;
+}
+
+
 .main__account-info {
     width: 50%;
     flex-grow: 1;
     background-color: bisque;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
 }
 .account-info__container {
+    margin-top: 225px;
+    border: 2px solid #597066;
+    width: 500px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-content: center;
+    background-color: #c4cccf;
 }
-/* #sidebar, #content { position: absolute; }
-#sidebar, #content { overflow: auto; padding: 20px; }
-header { */
-    /* height: 350px; 
-    background: lightgreen;
-    /*border-bottom: 2px solid #7B5427;*/
- 
-/* header h1 {
-    padding: 2px; margin: 0px;
-    height: 100px;
-    background: cornflowerblue;
-    text-align: center;
-    color: bisque;
-    border: 3px solid } */
+.transaction {
+    display: flex;
+    font-size: 18px;
+    color: #1f4d32;
+}
+.replenishment-value {
+    justify-content: center;
+    color: #8f0422;
+    font-size: 18px;
+}
 
-/* header h2 {
-    padding: 5px; margin: 0px;
-    height: 100px;
-    background: cornflowerblue;
-    text-align: center;
-    color: bisque;
-    border: 1px solid #7B5427} */
+.hed-transactions {
+    color: #1f4d32;
 
-/* #sidebar {
-    height: 450px;
-    width: 400px; background: #e5eada; ;
-    
-    /* top: 102px; 
+}
 
-bottom: 10px; 
-
-
-#content {
-    height: 450px;
-    top: 102px;
-    left: 375px; 
-    bottom: 10px; right: 12px;
-    background: red;
-    /*border: 2px solid #7B5427*/
 
